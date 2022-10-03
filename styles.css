@@ -1,0 +1,22 @@
+* {
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
+  border: 2px solid black;
+}
+
+.btn {
+  font-size: larger;
+  background-color: blue;
+  color: beige;
+}/*# sourceMappingURL=styles.css.map */

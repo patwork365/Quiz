@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+    </style>
+    <title>Quiz</title>
+    <script src="https://kit.fontawesome.com/e5ae6fe99d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="score">
+            <span id="user-score">0</span>
+            <span> / </span>
+            <span id="total-score">0</span>
+        </div>
+        <div class="content" id="question-area"> </div>
+        <div id="question-val"></div>
+            <div class="options">
+                <div class="btn btn-option" id="opt1">Opt1</div>
+                <div class="btn btn-option" id="opt2">Opt2</div>
+                <div class="btn btn-option" id="opt3">Opt3</div>
+                <div class="btn btn-option" id="opt4">Opt4</div> 
+            </div>
+        
+        <div class="controls">
+            <button class="btn btn-restart" id="restart1"><i class="fa-solid fa-play"></i>Restart</button>
+            <button class="btn btn-prev" id="prev"><i class="fa-solid fa-backward"></i></i>Prev</button>
+            <button class="btn btn-next" id="next"><i class="fa-solid fa-forward"></i></i>Next</button>
+            <button class="btn btn-submit" id="submit"><i class="fa-solid fa-face-smile"></i>Submit</button>
+        </div>
+    </div>
+<script type="module" src="./index.js"></script> 
+</body>
+</html>
