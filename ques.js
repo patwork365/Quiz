@@ -1,20 +1,24 @@
-export const allQuestions = [
-    {
+export const allQuestions = [{
+    question:"How do you declare a JavaScript variable x?",
+    choices: ["define x;","variable x;","var x;","def x;"],
+    correctAnswer:"var x;"
+  },
+  {
     question: "Before Mt. Everest was discovered, which mountain was considered to be the highest mountain in the world?",
     choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest", "Some Mountain"],
-    correctAnswer: 1
+    correctAnswer: "Kanchenjunga"
   },
 
   {
-    question: "Does England have a 4th of July?",
-    choices: ["Yes", "No", "I don't know", "I wish"],
-    correctAnswer: 0
+    question: "When do we get time-off from nology",
+    choices: ["Columbus Day", "Veteran Day", "Thanksgiving week", "All of the above"],
+    correctAnswer: "All of the above"
   },
 
   {
-    question: "What is Rupert the bear's middle name?",
-    choices: ["Bear", "He doesn't have one!", "The", "Rupert"],
-    correctAnswer: 2
+    question: "Inside what HTML tag you would put JavaScript code?",
+    choices: ["<js>", "<scripting>", "<script>", "<javascript>"],
+    correctAnswer: "<script>"
   },
 
   {

@@ -8,6 +8,15 @@
 $font-light:beige;
 $font-dark:black;
 
+#dino{
+    height:45px;
+    width:45px;
+    position: relative;
+     background-color:green ;
+    background-image: url(https://raw.githubusercontent.com/kriscfoster/chrome-dino-game/master/dino.png);
+    background-size: cover;
+}   
+
 body {
     height: 100vh;
     width: 100vw;
@@ -16,14 +25,44 @@ body {
     justify-content: center;
     background-color: $font-light;
     border: 2px solid black;
+    background-image: url('https://st4.depositphotos.com/1832477/24991/v/450/depositphotos_249912732-stock-illustration-quiz-banner-with-yellow-neon.jpg');
+    //  background-repeat: no-repeat;
+     background-size: cover;
  }
 
+.score{
+    color: $font-light;
+    font-weight: 200px;
+    font-size: 50px; 
+} 
  .btn{
-    font-size: larger;
+    font-size: 20px;
     background-color: blue;
     color: $font-light;
- }
+    box-sizing: 0 0 10px 2px;
+     }
 
+.btn-option{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 50px;
+    width:500px;
+    max-width: 500px;
+}     
+
+.btn:hover,
+.btn-option:hover{
+    cursor:pointer;
+    box-shadow: 0 0.4rem 1.4rem 0;
+    // transition: transform 150ms;
+    // transform: scale 1.03;
+}
+
+.content{
+    font-size: larger;
+    color: $font-light;
+}
 
 // body {
 //     line-height:1;
