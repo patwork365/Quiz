@@ -16,50 +16,86 @@ import allQuestions from "./ques.js";
         const optionPress=document.querySelectorAll(".btn-option");
         totalBoardScore.innerHTML=allQuestions.length;
 
-        // Global variable to calulate user score
+// Declare global variable and hide butttons
          userScore.innerHTML = 0;
-        //Tracking Counts 
+         submitBtn.style.visibility='hidden';    
+         nextBtn.style.visibility='hidden'; 
+//Tracking Counts in function
          let count=0;
          const funcCount =() =>{
               return  count=count+1;
-        };
+                };
  
-    // Restart button click to show the question        
-            const restart =(event)=>{
-                console.log(count);
-                event.preventDefault();
-                submitBtn.style.display='none';
-                questionVal.innerHTML=allQuestions[count].question;
-                option1.innerHTML = allQuestions[count].choices[0];
-                option2.innerHTML = allQuestions[count].choices[1];
-                option3.innerHTML = allQuestions[count].choices[2];
-                option4.innerHTML = allQuestions[count].choices[3];
-                // const correctResponse=allQuestions[count].correctAnswer;
-                restartBtn.style.display='none';
-            }
-    // Getting value for the answer option user has clicked         
-                optionPress.forEach((button) => {
-                     button.addEventListener("click",(event)=>{
+//Function Submit
+        const funcSubmit =()=>{  
+                optionPress.forEach((button) => {   
+                    button.style.visibility='hidden';      //Revert all Option to hide
+                 });
+                submitBtn.style.visibility='hidden';       //Hide Submit button
+                restartBtn.style.visibility='visible';
+                restartBtn.addEventListener("click", restart);
+                nextBtn.style.visibility='hidden'; 
+                count=0;
+                questionVal.innerHTML = "Congratulations on submitting the Quiz!"//"Your Score is :" `${userScore.innerHTML}`
+        }      
+        
+
+// Start button click to show the question        
+        const restart =(event)=>{
+                
+                optionPress.forEach((button) => {   
+                        button.style.visibility='visible';      //Revert all Option to appear
+                });
+                nextBtn.style.visibility='visible';
+                
+                if (count==allQuestions.length){
+                        nextBtn.classList.add("hide");
+                        console.log("Checking count is not equal");
+                        // funcSubmit();
+                }else{
+                        console.log("Checking count < questions length");
+                        event.preventDefault();
+                        submitBtn.style.visibility='hidden';       //Hide Submit button???????
+                        restartBtn.style.visibility='hidden';      //Hide Start button     ????
+                        questionVal.innerHTML=allQuestions[count].question;
+                        option1.innerHTML = allQuestions[count].choices[0];
+                        option2.innerHTML = allQuestions[count].choices[1];
+                        option3.innerHTML = allQuestions[count].choices[2];
+                        option4.innerHTML = allQuestions[count].choices[3];
+                        
+                } 
+        }
+// Getting value for the answer option user has clicked         
+        optionPress.forEach((button) => {
+                button.addEventListener("click",(event)=>{
                         event.preventDefault();
                         const rightResponse=button.innerHTML;
-                        console.log(allQuestions[count].correctAnswer);
-                        console.log(rightResponse);
                         if (rightResponse==allQuestions[count].correctAnswer)
                         {
                           userScore.innerHTML=Number(userScore.innerHTML)+1;   //Converting the innerHTLm to Num    
-                          button.style.backgroundColor='green';
+                          button.style.backgroundColor='green';       //Change correctResponse button color to green
+                          
                         } 
-                     });
                 });
+        });
                     
-    // Getting value for the NEXT question when NEXT is clicked                        
+// Getting value for the NEXT question when NEXT is clicked                        
         const next =(event)=>{
-             funcCount (count);
-             console.log(count);
-             restart(event);
-        //   optionPress.style.backgroundColor='blue';
+                optionPress.forEach((button) => {   
+                    button.style.backgroundColor='blue';      //Revert all Option color to blue
+                });
+                if (count == (allQuestions.length-1)){
+                        submitBtn.style.visibility='visible';
+                        nextBtn.style.visibility='hidden'; 
+                        userScore.innerHTML = 0;
 
+                        funcSubmit();
+                } else {
+                        funcCount (count);
+                        restart(event);
+                };
         }
+     
 
 // Putting eventListerner to the buttons and calling functions
         restartBtn.addEventListener("click", restart);

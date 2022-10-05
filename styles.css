@@ -5,15 +5,57 @@
   font-family: "Roboto", sans-serif;
 }
 
-#dino {
-  height: 45px;
-  width: 45px;
-  position: relative;
-  background-color: green;
-  background-image: url(https://raw.githubusercontent.com/kriscfoster/chrome-dino-game/master/dino.png);
-  background-size: cover;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+#clock {
+  height: 75px;
+  width: 65px;
+  position: relative;
+  background-image: url(https://www.bing.com/th?id=OIP.7yCkUXARBWh0_bwPtEbhPwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2);
+  background-size: cover;
+  -webkit-animation: clock 3.5s infinite linear;
+          animation: clock 3.5s infinite linear;
+}
+
+@-webkit-keyframes clock {
+  0% {
+    left: 80px;
+  }
+  20% {
+    left: 160px;
+  }
+  40% {
+    left: 240px;
+  }
+  60% {
+    left: 320px;
+  }
+  80% {
+    left: 400px;
+  }
+}
+
+@keyframes clock {
+  0% {
+    left: 80px;
+  }
+  20% {
+    left: 160px;
+  }
+  40% {
+    left: 240px;
+  }
+  60% {
+    left: 320px;
+  }
+  80% {
+    left: 400px;
+  }
+}
 body {
   height: 100vh;
   width: 100vw;

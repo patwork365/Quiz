@@ -4,9 +4,9 @@ export const allQuestions = [{
     correctAnswer:"var x;"
   },
   {
-    question: "Before Mt. Everest was discovered, which mountain was considered to be the highest mountain in the world?",
+    question: "Which mountain was considered to be the highest mountain in the world?",
     choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest", "Some Mountain"],
-    correctAnswer: "Kanchenjunga"
+    correctAnswer: "Mount Everest"
   },
 
   {
@@ -16,15 +16,15 @@ export const allQuestions = [{
   },
 
   {
-    question: "Inside what HTML tag you would put JavaScript code?",
-    choices: ["<js>", "<scripting>", "<script>", "<javascript>"],
-    correctAnswer: "<script>"
+    question: "Which of the below is a dwarf planet",
+    choices: ["Venus", "Pluto", "Mars", "Mercury"],
+    correctAnswer: "Pluto"
   },
 
   {
-    question: " What can you never eat for breakfast? ",
-    choices: ["Dinner", "Something sugary", "Lunch", "Supper"],
-    correctAnswer: 0
+    question: " JavaScript File Has An Extension of .. ",
+    choices: [".js", ".java", ".javascript", ".json"],
+    correctAnswer: ".js"
   },
 
 ];

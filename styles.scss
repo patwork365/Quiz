@@ -8,15 +8,32 @@
 $font-light:beige;
 $font-dark:black;
 
-#dino{
-    height:45px;
-    width:45px;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+#clock{
+    height:75px;
+    width:65px;
     position: relative;
-     background-color:green ;
-    background-image: url(https://raw.githubusercontent.com/kriscfoster/chrome-dino-game/master/dino.png);
+    // background-color:green ;
+    background-image: url(https://www.bing.com/th?id=OIP.7yCkUXARBWh0_bwPtEbhPwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2);
     background-size: cover;
+    animation: clock 3.5s infinite linear;
 }   
 
+@keyframes clock{
+    0%{left: 80px;}
+    20%{left: 160px;}
+    40%{left:240px;}
+    60%{left:320px;}
+    80%{left:400px;}
+    // 100%{left: 600px;}
+}
+
+// .hidden { display: none; }
 body {
     height: 100vh;
     width: 100vw;
