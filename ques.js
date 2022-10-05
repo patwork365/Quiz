@@ -4,7 +4,7 @@ export const allQuestions = [{
     correctAnswer:"var x;"
   },
   {
-    question: "Which mountain was considered to be the highest mountain in the world?",
+    question: "Which is the highest mountain in the world?",
     choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest", "Some Mountain"],
     correctAnswer: "Mount Everest"
   },
