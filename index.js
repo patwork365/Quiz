@@ -18,6 +18,7 @@ import allQuestions from "./ques.js";
 
 // Declare global variable and hide butttons
          userScore.innerHTML = 0;
+         let submitScore= Number(userScore.innerHTML);
          submitBtn.style.visibility='hidden';    
          nextBtn.style.visibility='hidden'; 
 //Tracking Counts in function
@@ -36,7 +37,9 @@ import allQuestions from "./ques.js";
                 restartBtn.addEventListener("click", restart);
                 nextBtn.style.visibility='hidden'; 
                 count=0;
-                questionVal.innerHTML = "Congratulations on submitting the Quiz!"//"Your Score is :" `${userScore.innerHTML}`
+                console.log(submitScore);
+                questionVal.innerHTML = `Congratulations on submitting the Quiz! Your GRAND SCORE  is  : ${submitScore}`;
+                
         }      
         
 
@@ -51,6 +54,7 @@ import allQuestions from "./ques.js";
                 if (count==allQuestions.length){
                         nextBtn.classList.add("hide");
                         console.log("Checking count is not equal");
+                        
                         // funcSubmit();
                 }else{
                         console.log("Checking count < questions length");
@@ -87,6 +91,7 @@ import allQuestions from "./ques.js";
                 if (count == (allQuestions.length-1)){
                         submitBtn.style.visibility='visible';
                         nextBtn.style.visibility='hidden'; 
+                        submitScore= Number(userScore.innerHTML);
                         userScore.innerHTML = 0;
 
                         funcSubmit();
@@ -99,56 +104,6 @@ import allQuestions from "./ques.js";
 
 // Putting eventListerner to the buttons and calling functions
         restartBtn.addEventListener("click", restart);
-        // prevBtn.addEventListener("click", prev);
         nextBtn.addEventListener("click",next);
         submitBtn.addEventListener("click",submit);
-
-
-
-
-
-
-
-
-
-
-
-
-// Function for restart is hiding button submit / previous button
-            // const scoring =(score) =>{
-            // optionPress.addEventListener("click",(event)=>{
-            // const userScore1=optionPress.innerHTML;
-            // console.log(userScore1);
-            // userScore.innerHTML =userScore1;
-            // console.log(allQuestions[0].correctAnswer[0]);
-            // if (optionPress == allQuestions[0].correctAnswer[0])
-            //         {
-            //             userScore = 1;
-            //             console.log(userScore);
-            //         }    
-            //     })
-            // }    ;
-
-
-
-        //step 4- render a single pokemon on page
-// container.innerHTML = createPokemonHtmlCard(pokemonArray[0]);
-
-    // const questionCard =(question) =>{
-    //     questionVal.innerHTML = `${questionVal.question[0]}`;
-    //     option1.innerHTML = `${questionVal.choice[0]}`;
-    //     option2.innerHTML = `${questionVal.choice[1]}`;
-    //     option3.innerHTML = `${questionVal.choice[2]}`;
-    //     option4.innerHTML = `${questionVal.choice[3]}`;
-    // };    
-    // const para = `${pokemon.name} #(${pokemon.id}) is a ${pokemon.types[0][1]}`;
-    // console.log (para);
-    //    return `
-    //   <div class="pokemon-card">
-    //       <img class ="pokemon-card__sprite" src=${pokemon.sprite}>
-    //       <h2 class ="pokemon-card__name">${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}</h2>
-    //       <p class="pokemon-card__types">${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)} (#${pokemon.id}) is a ${pokemon.types.join(" & ")} type pokemon.</p>
-        
-    //   `
-
 
