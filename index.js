@@ -21,13 +21,17 @@ import allQuestions from "./ques.js";
          let submitScore= Number(userScore.innerHTML);
          submitBtn.style.visibility='hidden';    
          nextBtn.style.visibility='hidden'; 
-//Tracking Counts in function
+         let a=0;
+        //  const a = Math.floor(Math.random() * (10 - 1)) + 1;
+        //  console.log (a);
+
+       //Tracking Counts in function, for all question
          let count=0;
          const funcCount =() =>{
               return  count=count+1;
                 };
  
-//Function Submit
+        //Function Submit
         const funcSubmit =()=>{  
                 optionPress.forEach((button) => {   
                     button.style.visibility='hidden';      //Revert all Option to hide
@@ -37,11 +41,20 @@ import allQuestions from "./ques.js";
                 restartBtn.addEventListener("click", restart);
                 nextBtn.style.visibility='hidden'; 
                 count=0;
-                console.log(submitScore);
-                questionVal.innerHTML = `Congratulations on submitting the Quiz! Your GRAND SCORE  is  : ${submitScore}`;
-                
+                // if (text.length>0){
+                //         console.log (text.length);
+                //         questionVal.innerHTML = `Sorry Timer is up :( Your GRAND SCORE  is : ${submitScore}`;
+                // } else {
+                questionVal.innerHTML = `Congratulations  :)  Your GRAND SCORE  is  : ${submitScore}`;
+                // };
+                userScore.innerHTML = "0";  // making userboard on screen to zero
         }      
-        
+//Random Number - Not working
+                const funcRandoms = ()=>{ 
+                // console.log (` ${a}`);
+                  a= (Math.floor(Math.random() * (5 - 1)) + 1);
+                  return a;
+                }
 
 // Start button click to show the question        
         const restart =(event)=>{
@@ -57,10 +70,11 @@ import allQuestions from "./ques.js";
                         
                         // funcSubmit();
                 }else{
-                        console.log("Checking count < questions length");
+                        
+                        // console.log("Checking count < questions length");
                         event.preventDefault();
-                        submitBtn.style.visibility='hidden';       //Hide Submit button???????
-                        restartBtn.style.visibility='hidden';      //Hide Start button     ????
+                        submitBtn.style.visibility='hidden';       //Hide Submit button
+                        restartBtn.style.visibility='hidden';      //Hide Start button 
                         questionVal.innerHTML=allQuestions[count].question;
                         option1.innerHTML = allQuestions[count].choices[0];
                         option2.innerHTML = allQuestions[count].choices[1];
@@ -73,7 +87,8 @@ import allQuestions from "./ques.js";
         optionPress.forEach((button) => {
                 button.addEventListener("click",(event)=>{
                         event.preventDefault();
-                        const rightResponse=button.innerHTML;
+                        // funcRandoms();
+                        const rightResponse=button.innerHTML;       // passing value to variable to chck click answer agaist array.response
                         if (rightResponse==allQuestions[count].correctAnswer)
                         {
                           userScore.innerHTML=Number(userScore.innerHTML)+1;   //Converting the innerHTLm to Num    
@@ -107,3 +122,10 @@ import allQuestions from "./ques.js";
         nextBtn.addEventListener("click",next);
         submitBtn.addEventListener("click",submit);
 
+//Adding timeOut for 30 second
+        setTimeout(function(){
+                submitScore= Number(userScore.innerHTML);
+                funcSubmit()
+                // let text = "Sorry 30 second timer is up"
+               }, 30000); //30 second timer 
+        // let text = "Sorry 30 second timer is up"
