@@ -5,7 +5,7 @@ export const allQuestions = [{
   },
   {
     question: "Which is the highest mountain in the world?",
-    choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest", "Some Mountain"],
+    choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest", "Mt K2"],
     correctAnswer: "Mount Everest"
   },
 

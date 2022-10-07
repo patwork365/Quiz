@@ -63,6 +63,7 @@ body {
     box-sizing: 0 0 10px 2px;
      }
 
+
 .btn-option{
     display: flex;
     justify-content: flex-start;
@@ -70,12 +71,14 @@ body {
     height: 50px;
     width:500px;
     max-width: 500px;
-}     
+    }     
+
+
 
 .btn:hover,
 .btn-option:hover{
     cursor:pointer;
-    box-shadow: 0 0.4rem 1.4rem 0;
+    box-shadow: 0 0.4rem 1.4rem 0 red;
     // transition: transform 150ms;
     // transform: scale 1.03;
 }

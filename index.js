@@ -1,3 +1,4 @@
+
 import allQuestions from "./ques.js";
 
 //step2-get value from html into JS
@@ -41,17 +42,13 @@ import allQuestions from "./ques.js";
                 restartBtn.addEventListener("click", restart);
                 nextBtn.style.visibility='hidden'; 
                 count=0;
-                // if (text.length>0){
-                //         console.log (text.length);
-                //         questionVal.innerHTML = `Sorry Timer is up :( Your GRAND SCORE  is : ${submitScore}`;
-                // } else {
-                questionVal.innerHTML = `Congratulations  :)  Your GRAND SCORE  is  : ${submitScore}`;
-                // };
+                startConfetti(); 
+                stopConfetti()//Not working confetti
+                questionVal.innerHTML = `Thanks for playing  :)  Your GRAND SCORE  is  : ${submitScore}`;
                 userScore.innerHTML = "0";  // making userboard on screen to zero
         }      
 //Random Number - Not working
                 const funcRandoms = ()=>{ 
-                // console.log (` ${a}`);
                   a= (Math.floor(Math.random() * (5 - 1)) + 1);
                   return a;
                 }
@@ -66,7 +63,7 @@ import allQuestions from "./ques.js";
                 
                 if (count==allQuestions.length){
                         nextBtn.classList.add("hide");
-                        console.log("Checking count is not equal");
+                         console.log("restart function");
                         
                         // funcSubmit();
                 }else{
@@ -83,7 +80,7 @@ import allQuestions from "./ques.js";
                         
                 } 
         }
-// Getting value for the answer option user has clicked         
+// Getting value for the answer option user has clicked and make it green      
         optionPress.forEach((button) => {
                 button.addEventListener("click",(event)=>{
                         event.preventDefault();
@@ -103,13 +100,15 @@ import allQuestions from "./ques.js";
                 optionPress.forEach((button) => {   
                     button.style.backgroundColor='blue';      //Revert all Option color to blue
                 });
-                if (count == (allQuestions.length-1)){
+                if (count == (allQuestions.length-1)){        // checking if all question are done
                         submitBtn.style.visibility='visible';
+                        console.log(count);
                         nextBtn.style.visibility='hidden'; 
-                        submitScore= Number(userScore.innerHTML);
+                        submitScore= Number(userScore.innerHTML); //convert to number
                         userScore.innerHTML = 0;
-
-                        funcSubmit();
+                        // console.log("in next button");
+                        restartBtn.addEventListener("click", funcSubmit());
+                        // funcSubmit();
                 } else {
                         funcCount (count);
                         restart(event);
@@ -125,7 +124,19 @@ import allQuestions from "./ques.js";
 //Adding timeOut for 30 second
         setTimeout(function(){
                 submitScore= Number(userScore.innerHTML);
+                console.log("timer");
                 funcSubmit()
-                // let text = "Sorry 30 second timer is up"
-               }, 30000); //30 second timer 
+                }, 30000); //30 second timer 
         // let text = "Sorry 30 second timer is up"
+
+    const startConfetti=()=>{
+        setTimeout(function(){
+                confetti.start()
+        },1000  );
+    }    
+
+    const stopConfetti = () => {
+        setTimeout(function() {
+            confetti.stop()
+        }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    };
