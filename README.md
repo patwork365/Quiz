@@ -9,3 +9,5 @@ with multiple choices
 5. When all questions are shown, click on SUBMIT button
 6. FINAL SCORE is displayed
 7. User can click on START button to restart the game
+
+and there are confetti at the end of the quiz 
