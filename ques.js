@@ -1,7 +1,7 @@
 export const allQuestions = [{
     question:"How do you declare a JavaScript variable x?",
-    choices: ["define x;","variable x;","var x;","def x;"],
-    correctAnswer:"var x;"
+    choices: ["define x;","variable x;","const x;","def x;"],
+    correctAnswer:"const x;"
   },
   {
     question: "Which is the highest mountain in the world?",

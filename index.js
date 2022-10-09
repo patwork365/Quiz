@@ -37,7 +37,7 @@ import allQuestions from "./ques.js";
                 optionPress.forEach((button) => {   
                     button.style.visibility='hidden';      //Revert all Option to hide
                  });
-                submitBtn.style.visibility='hidden';       //Hide Submit button
+                 submitBtn.style.visibility='hidden';       //Hide Submit button
                 restartBtn.style.visibility='visible';
                 restartBtn.addEventListener("click", restart);
                 nextBtn.style.visibility='hidden'; 
@@ -102,19 +102,19 @@ import allQuestions from "./ques.js";
                 });
                 if (count == (allQuestions.length-1)){        // checking if all question are done
                         submitBtn.style.visibility='visible';
-                        console.log(count);
+                         console.log(count);
                         nextBtn.style.visibility='hidden'; 
+                        // nextBtn.innerHTML="SUBMIT";
+                        submitBtn.addEventListener("click", funcSubmit);
                         submitScore= Number(userScore.innerHTML); //convert to number
                         userScore.innerHTML = 0;
-                        // console.log("in next button");
-                        restartBtn.addEventListener("click", funcSubmit());
-                        // funcSubmit();
-                } else {
+                         } else {
+                        console.log ("when cout is not equal to array")
                         funcCount (count);
                         restart(event);
                 };
         }
-     
+       
 
 // Putting eventListerner to the buttons and calling functions
         restartBtn.addEventListener("click", restart);
@@ -126,8 +126,8 @@ import allQuestions from "./ques.js";
                 submitScore= Number(userScore.innerHTML);
                 console.log("timer");
                 funcSubmit()
-                }, 30000); //30 second timer 
-        // let text = "Sorry 30 second timer is up"
+                }, 2000); //30 second timer 
+        let text = "Sorry 30 second timer is up"
 
     const startConfetti=()=>{
         setTimeout(function(){
