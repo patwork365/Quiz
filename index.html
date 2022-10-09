@@ -12,22 +12,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
     <div class="container">
+        
         <div class="score">
             <span id="user-score">0</span>
             <span> / </span>
             <span id="total-score">0</span>
+            <!-- <div class="timer" type="button">second yo yo</div> -->
+        </div>
+        <div class="times">
+            <span id="const_text">Timer: </span>
+            <span id="timer" type="button">00:00</span>
         </div>
         <div id="clock"></div>
         <div class="content" id="question-area"> </div>
-        <div id="question-val"></div>
+        <div class="question-val">
             <div class="options">
                 <div class="btn btn-option" id="opt1">WELCOME to the QUIZ</div>
                 <div class="btn btn-option" id="opt2">YOUR 30 SEC TIMER</div>
                 <div class="btn btn-option" id="opt3">STARTS NOW ...</div>
                 <div class="btn btn-option" id="opt4">PRESS *START* to BEGIN</div> 
             </div>
-        
+            <p class="question-val__para"></p>
+        </div>    
         <div class="controls">
             <button class="btn btn-restart " id="restart1"><i class="fa-solid fa-play"></i>Start</button>
             <button class="btn btn-next " id="next"><i class="fa-solid fa-forward"></i></i>Next</button>

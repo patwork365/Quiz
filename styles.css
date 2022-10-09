@@ -1,6 +1,6 @@
 * {
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
@@ -8,7 +8,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  width: auto;
 }
 
 #clock {
@@ -23,37 +24,25 @@
 
 @-webkit-keyframes clock {
   0% {
-    left: 80px;
+    left: 20px;
   }
   20% {
-    left: 160px;
+    left: 80px;
   }
   40% {
-    left: 240px;
-  }
-  60% {
-    left: 320px;
-  }
-  80% {
-    left: 400px;
+    left: 140px;
   }
 }
 
 @keyframes clock {
   0% {
-    left: 80px;
+    left: 20px;
   }
   20% {
-    left: 160px;
+    left: 80px;
   }
   40% {
-    left: 240px;
-  }
-  60% {
-    left: 320px;
-  }
-  80% {
-    left: 400px;
+    left: 140px;
   }
 }
 body {
@@ -69,8 +58,23 @@ body {
   background-size: cover;
 }
 
+#timer #const_text {
+  color: beige;
+}
+
+.times {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  color: beige;
+}
+
 .score {
   color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
   font-weight: 200px;
   font-size: 50px;
 }
@@ -80,6 +84,7 @@ body {
   background-color: blue;
   color: beige;
   box-sizing: 0 0 10px 2px;
+  border-radius: 5px;
 }
 
 .btn-option {
@@ -89,11 +94,13 @@ body {
   height: 50px;
   width: 500px;
   max-width: 500px;
+  border-radius: 5px;
 }
 
 .btn:hover,
 .btn-option:hover {
   cursor: pointer;
+  border-radius: 5px;
   box-shadow: 0 0.4rem 1.4rem 0;
 }
 
